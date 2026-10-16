@@ -1,0 +1,13 @@
+.contact-callout { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 48px; width: 92%; margin: 5vw auto 0; padding: 5.5vw; border-radius: 24px; background: linear-gradient(110deg, #def7f2, #f0f5ff 55%, #fff3f0); }
+.contact-callout .eyebrow { font-size: clamp(10px, 0.78vw, 13px); color: #078f84; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
+.contact-callout h2 { color: #0c3441; font-size: clamp(29px, 3.1vw, 54px); font-weight: 400; line-height: 1.2; letter-spacing: -0.055em; }
+.contact-callout .button { flex-shrink: 0; font-size: clamp(12px, 0.95vw, 15px); padding: 13px 24px; gap: 16px; background: #083f4b; }
+.contact-callout .button:hover { background: #075261; }
+.contact-callout .button .icon { width: 17px; height: 17px; }
+.contact-callout-ring { position: absolute; width: 200px; height: 200px; top: -125px; right: 18%; border: 40px solid #ffffff66; border-radius: 50%; z-index: -1; }
+@media (max-width: 760px) {
+  .contact-callout { flex-direction: column; align-items: flex-start; margin-top: 44px; padding: 36px 26px; gap: 28px; border-radius: 18px; }
+  .contact-callout h2 { font-size: 30px; }
+  .contact-callout .eyebrow { margin-bottom: 18px; }
+  .contact-callout-ring { width: 150px; height: 150px; border-width: 30px; top: -95px; right: 8%; }
+}

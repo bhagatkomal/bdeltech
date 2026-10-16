@@ -1,0 +1,59 @@
+.about-page { font-family: 'DM Sans', sans-serif; color: #0c3441; background: #fafcf7; padding-top: 7.5vw; padding-bottom: 4vw; }
+.about-page .eyebrow { font-size: clamp(10px, 0.8vw, 13px); color: #089d8e; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+.about-introduction { display: grid; grid-template-columns: 55% 42.5%; align-items: center; gap: 2.5%; }
+.about-introduction h1 { font-size: clamp(32px, 4.2vw, 84px); font-weight: 400; line-height: 1.02; letter-spacing: -0.065em; margin-top: 24px; }
+.about-introduction h1 span { display: block; }
+.about-introduction h1 .about-accent { color: #00a58f; }
+.about-introduction-photo { display: block; width: 100%; aspect-ratio: 1.11; object-fit: cover; border-radius: 16px; }
+.about-statistics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 42px 0 0; }
+.about-statistics > div { display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 12px; padding: 32px 40px; border: 1px solid #dce7e8; border-radius: 16px; background: #fff; box-shadow: 0 20px 40px #0d454506; }
+.about-statistics dt { color: #718d96; font-size: clamp(12px, 1vw, 16px); }
+.about-statistics dd { margin: 0; color: #0b5260; font-size: clamp(26px, 2vw, 36px); font-weight: 600; line-height: 1.2; }
+.about-principles { display: grid; grid-template-columns: 1fr 2.05fr; gap: 22px; margin-top: 8.6vw; }
+.about-team-photo { display: block; width: 100%; height: 100%; aspect-ratio: 330 / 345; object-fit: cover; border-radius: 16px; }
+.about-principle-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.about-principle-card { min-width: 0; border: 1px solid #dce7e8; border-radius: 16px; padding: clamp(25px, 2.4vw, 42px); }
+.about-principle-card:last-child { grid-column: 1 / -1; }
+.about-principle-icon { width: 30px; margin-bottom: 30px; }
+.about-principle-card h2 { font-size: clamp(20px, 1.7vw, 30px); font-weight: 400; line-height: 1.4; letter-spacing: -0.035em; margin-bottom: 18px; }
+.about-principle-card p { color: #718d96; font-size: clamp(15px, 1.1vw, 19px); line-height: 1.8; }
+.about-culture { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 8vw; width: 92%; margin: 11vw auto 0; border-radius: 24px; background: #f0f7f6; padding: 6vw 6vw 2.6vw; }
+.about-culture .eyebrow { color: #6d8a94; }
+.about-culture h2 { margin-top: 24px; font-size: clamp(29px, 3.05vw, 54px); font-weight: 400; line-height: 1.2; letter-spacing: -0.055em; }
+.about-culture-description { color: #718d96; font-size: clamp(16px, 1.3vw, 22px); line-height: 1.8; margin: 44px 0 24px; }
+.about-culture .button { font-size: 13px; padding: 13px 23px; background: #083f4b; }
+.about-culture-photo { display: block; width: 100%; aspect-ratio: 1.1; object-fit: cover; border-radius: 16px; }
+@media (max-width: 1050px) {
+  .about-statistics > div { padding: 28px; }
+  .about-principles, .about-principle-cards { gap: 16px; }
+  .about-principle-card { padding: 24px; }
+  .about-principle-icon { margin-bottom: 22px; }
+  .about-culture { padding: 5vw; gap: 5vw; }
+}
+@media (max-width: 760px) {
+  .about-page { padding-block: 44px 48px; }
+  .about-introduction { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .about-introduction h1 { font-size: clamp(33px, 6.5vw, 48px); margin-top: 20px; }
+  .about-introduction h1 span { display: inline; }
+  .about-introduction-photo { max-height: 450px; }
+  .about-statistics { gap: 12px; margin-top: 26px; }
+  .about-statistics > div { padding: 22px 16px; gap: 10px; }
+  .about-statistics dd { font-size: 26px; }
+  .about-statistics dt { font-size: 11px; }
+  .about-principles { grid-template-columns: minmax(0, 1fr); margin-top: 56px; gap: 24px; }
+  .about-team-photo { max-height: 450px; aspect-ratio: 1.2; }
+  .about-principle-card { padding: 26px; }
+  .about-principle-card p { font-size: 16px; }
+  .about-culture { grid-template-columns: minmax(0, 1fr); margin-top: 56px; padding: 32px 24px; gap: 32px; border-radius: 18px; }
+  .about-culture h2 { font-size: 30px; margin-top: 18px; }
+  .about-culture-break { display: none; }
+  .about-culture-description { margin-top: 24px; font-size: 16px; }
+  .about-culture-photo { max-height: 440px; }
+}
+@media (max-width: 480px) {
+  .about-principle-cards { grid-template-columns: minmax(0, 1fr); }
+  .about-principle-card:last-child { grid-column: auto; }
+  .about-statistics { gap: 8px; }
+  .about-statistics > div { padding: 18px 10px; border-radius: 12px; }
+  .about-statistics dd { font-size: 24px; }
+}

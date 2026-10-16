@@ -1,0 +1,106 @@
+.home-page { color: #0c3441; background: #fafcf7; }
+.home-page .eyebrow { color: #607f88; font-size: clamp(10px, 0.76vw, 13px); font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+.home-page h2 { font-size: clamp(28px, 3.05vw, 54px); font-weight: 400; line-height: 1.2; letter-spacing: -0.055em; }
+.home-page .button { background: #083f4b; color: white; font-size: clamp(12px, 0.95vw, 15px); font-weight: 500; padding: 13px 24px; gap: 16px; }
+.home-page .button:hover { background: #075261; }
+.home-page .button-outline { background: transparent; color: #083f4b; border-color: #d0e1e3; }
+.home-page .button-outline:hover { background: #edf6f2; }
+.home-page .button .icon { width: 17px; height: 17px; }
+.home-page .section-description { color: #718d96; font-size: clamp(15px, 1.25vw, 20px); line-height: 1.75; }
+
+.home-hero .hero-inner { display: grid; grid-template-columns: 55% 45%; align-items: center; padding-top: 7.5vw; padding-bottom: 8vw; }
+.home-hero .hero-copy { position: relative; z-index: 1; min-width: 0; }
+.home-hero h1 { font-size: clamp(48px, 5.1vw, 88px); font-weight: 400; line-height: 1.02; letter-spacing: -0.065em; margin: 24px 0 32px; }
+.home-hero h1 > span { color: #00a58f; }
+.home-hero .hero-description { color: #718d96; font-size: clamp(16px, 1.3vw, 21px); line-height: 1.8; max-width: 650px; padding-right: 30px; }
+.home-hero .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
+.home-hero .hero-proof { display: flex; gap: 28px; flex-wrap: wrap; list-style: none; margin: 34px 0 0; padding: 0; color: #6d8990; font-size: clamp(11px, 0.95vw, 14px); }
+.hero-proof li { display: flex; align-items: center; gap: 10px; }
+.hero-proof li > span { color: #00aa94; font-size: 18px; }
+.home-hero .hero-visual { width: 100%; aspect-ratio: 632 / 602; position: relative; align-self: center; }
+.hero-orbit { position: absolute; top: 2%; left: 0; width: 75%; height: 75%; border-radius: 50%; background: #ddf5f2; }
+.hero-small-orbit { position: absolute; top: 0; right: 0; width: 27%; aspect-ratio: 1; border-radius: 50%; background: #e8eef9; }
+.hero-building { position: absolute; left: 20.25%; top: 7%; width: 73.1%; height: 92.7%; object-fit: cover; border-radius: 29% 0 27% 5%; box-shadow: 0 30px 55px #103d4410; }
+.hero-note { position: absolute; top: 0.5%; right: 3%; width: 20%; min-width: 96px; padding: 18px 16px; border-radius: 8px; border: 1px solid #dce9e9; background: #fffffffa; transform: rotate(-3deg); color: #083f4b; font-size: clamp(11px, 1vw, 16px); line-height: 1.6; }
+.hero-note p { line-height: 1.6; }
+.hero-note-icon { width: 18px; margin-bottom: 8px; }
+
+.home-services { padding-top: 4vw; padding-bottom: 10.5vw; }
+.home-section h2 { margin-top: 24px; }
+.home-services .section-description { margin-top: 18px; }
+.home-services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 50px; grid-auto-rows: 1fr; }
+.home-service-card { display: block; min-width: 0; border: 1px solid #dae5e7; border-radius: 14px; padding: clamp(24px, 2.2vw, 36px); background: #ffffffdc; text-decoration: none; transition: border-color 160ms, transform 160ms; }
+.home-service-card:hover { border-color: #78b7af; transform: translateY(-3px); }
+.home-service-icon { width: clamp(36px, 3.1vw, 48px); border-radius: 9px; margin-bottom: 28px; }
+.home-service-card h3 { font-size: clamp(18px, 1.45vw, 23px); font-weight: 500; line-height: 1.4; letter-spacing: -0.035em; margin-bottom: 14px; }
+.home-service-card p { color: #718d96; font-size: clamp(14px, 1.1vw, 17px); line-height: 1.75; }
+
+.home-why { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 5vw; width: 92%; margin-inline: auto; padding: 6vw; border-radius: 24px; background: #f0f7f6; }
+.home-why h2 { margin-top: 24px; font-size: clamp(28px, 2.95vw, 52px); }
+.home-why .section-description { margin-top: 20px; max-width: 560px; }
+.home-team-photo { display: block; width: 100%; aspect-ratio: 562 / 510; object-fit: cover; border-radius: 18px; }
+.home-statistics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 64px 0 0; }
+.home-statistics > div { display: flex; flex-direction: column-reverse; gap: 8px; }
+.home-statistics dt { color: #718d96; font-size: clamp(11px, 0.95vw, 15px); }
+.home-statistics dd { margin: 0; color: #0b5260; font-size: clamp(26px, 2.1vw, 36px); font-weight: 650; letter-spacing: -0.03em; }
+
+.home-industries { padding-block: 11vw 10vw; }
+.home-industries-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-top: 50px; }
+.home-industry-card { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 20px; padding: 24px 10px 28px; border: 1px solid #dae5e7; border-radius: 12px; background: #ffffffdc; }
+.home-industry-icon { width: 24px; }
+.home-industry-card h3 { color: #214954; font-size: clamp(10px, 0.9vw, 14px); font-weight: 600; line-height: 1.5; letter-spacing: -0.02em; }
+
+.home-contact { position: relative; isolation: isolate; overflow: hidden; display: flex; justify-content: space-between; align-items: center; gap: 50px; width: 92%; margin: 0 auto 8vw; padding: 5.5vw; border-radius: 24px; min-height: 320px; background: #164651; color: white; }
+.home-contact-landscape { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -3; }
+.home-contact::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #043c47e8 0%, #073e4770 65%, #073e471a); z-index: -2; }
+.home-contact-ring { position: absolute; top: -90px; right: 18%; width: 200px; height: 200px; border: 40px solid #e2efed88; border-radius: 50%; z-index: -1; }
+.home-contact .eyebrow { color: #a6d5d0; margin-bottom: 22px; }
+.home-contact h2 { max-width: 780px; font-size: clamp(29px, 3.1vw, 54px); }
+.home-contact .button { flex-shrink: 0; }
+
+@media (min-width: 1800px) { .home-hero .hero-inner { padding-block: 120px 150px; } }
+@media (max-width: 1100px) {
+  .home-services-grid { gap: 16px; }
+  .home-service-card { padding: 24px; }
+  .home-why { padding: 5vw; gap: 4vw; }
+  .home-statistics { gap: 16px; margin-top: 38px; }
+  .home-industries-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .home-contact { min-height: 270px; }
+}
+@media (max-width: 760px) {
+  .home-hero .hero-inner { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 40px; gap: 44px; }
+  .home-hero h1 { font-size: clamp(48px, 9vw, 70px); }
+  .home-hero .hero-description { max-width: 570px; padding-right: 0; }
+  .home-hero .hero-actions { gap: 12px; margin-top: 26px; }
+  .home-page .button { padding: 12px 20px; gap: 10px; }
+  .home-hero .hero-proof { gap: 20px; margin-top: 26px; font-size: 12px; }
+  .home-hero .hero-visual { max-width: 470px; margin-left: auto; }
+  .home-services { padding-block: 40px 64px; }
+  .home-page h2 { font-size: 30px; }
+  .home-section h2, .home-why h2 { margin-top: 18px; }
+  .home-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 30px; }
+  .home-service-card { padding: 24px 20px; }
+  .home-service-icon { margin-bottom: 22px; }
+  .home-service-card h3 { font-size: 18px; }
+  .home-service-card p { font-size: 15px; }
+  .home-why { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; border-radius: 18px; }
+  .home-statistics { gap: 14px; margin-top: 32px; }
+  .home-statistics dd { font-size: 28px; }
+  .home-statistics dt { font-size: 11px; }
+  .home-team-photo { max-width: 550px; justify-self: center; }
+  .home-industries { padding-block: 64px; }
+  .home-industries-grid { margin-top: 30px; gap: 12px; }
+  .home-industry-card { padding: 22px 10px; gap: 16px; }
+  .home-industry-card h3 { font-size: 12px; }
+  .home-contact { align-items: flex-start; flex-direction: column; gap: 28px; padding: 36px 26px; margin-bottom: 60px; border-radius: 18px; }
+  .home-contact-ring { width: 150px; height: 150px; border-width: 30px; top: -70px; right: 8%; }
+  .home-contact .eyebrow { margin-bottom: 18px; }
+}
+@media (max-width: 480px) {
+  .home-services-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .home-industries-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-hero h1 { font-size: clamp(36px, 11.8vw, 55px); }
+  .home-hero .hero-proof { gap: 16px; font-size: 11px; }
+  .home-statistics { gap: 8px; }
+  .home-statistics dd { font-size: 25px; }
+}

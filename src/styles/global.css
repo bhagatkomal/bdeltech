@@ -1,0 +1,34 @@
+@import './layout.css';
+@import './fonts.css';
+
+:root {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #10334a;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid #378a9a; outline-offset: 5px; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(2rem, 4.4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.045em; }
+h2 { font-size: 1.95rem; line-height: 1.25; letter-spacing: -0.035em; }
+h3 { font-size: 1rem; line-height: 1.45; }
+p { line-height: 1.65; }
+button { font: inherit; }
+.icon { display: block; width: 24px; height: 24px; flex-shrink: 0; }
+.eyebrow { color: #60849a; font-size: 0.86rem; font-weight: 600; letter-spacing: 0.045em; text-transform: uppercase; }
+.description { color: #608099; font-size: 1.1rem; max-width: 42rem; margin-top: 1.5rem; }
+.page-intro { max-width: 54rem; margin-bottom: 2rem; }
+.page-intro h1 { margin-top: 1rem; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 0.8rem; padding: 0.85rem 1.6rem; border: 1px solid transparent; border-radius: 100px; background: #0e4e59; color: white; font-size: 0.9rem; font-weight: 500; line-height: 1.4; text-decoration: none; transition: background 160ms, box-shadow 160ms, transform 160ms; }
+.button .icon { width: 18px; height: 18px; }
+.button:hover { background: #073a45; box-shadow: 0 4px 12px #0e4e591a; }
+.button-outline { background: transparent; color: #527e95; border-color: #bdd0da; }
+.button-outline:hover { background: #edf5f7; }
+.text-link { font-weight: 600; text-underline-offset: 0.3em; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }

@@ -1,0 +1,40 @@
+.container { width: 100%; padding-inline: 5%; margin-inline: auto; }
+.site-shell { display: flex; flex-direction: column; min-height: 100svh; }
+.site-header { background: #fafcf8; border-bottom: 1px solid #e1e9e6; }
+.header-inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 88px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-size: 19px; font-weight: 600; letter-spacing: -0.025em; text-decoration: none; white-space: nowrap; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 7px; color: white; background: #083f4b; font-size: 23px; font-weight: 500; }
+.navigation { display: flex; align-items: center; gap: 25px; margin-left: auto; }
+.navigation > a { position: relative; text-decoration: none; font-size: 13px; font-weight: 400; color: #69838d; padding-block: 18px; }
+.navigation > a:hover, .navigation > a.active { color: #083f4b; }
+.navigation > a.active::after { content: ''; position: absolute; bottom: 7px; left: 0; right: 0; height: 2px; background: #08a693; }
+.header-contact { background: #083f4b; padding: 12px 22px; font-size: 13px; }
+.menu-toggle, .navigation .mobile-contact { display: none; }
+.main-content { flex: 1; padding-block: clamp(3rem, 10vw, 7rem); }
+.home-content { flex: 1; }
+.site-footer { background: #083f4b; color: #a2bfc4; padding: 78px 0 36px; }
+.footer-top { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.footer-brand { color: #edf6f5; font-size: 22px; text-decoration: none; font-weight: 500; }
+.footer-company p { font-size: 13px; margin-top: 16px; }
+.footer-navigation { display: flex; justify-content: flex-end; gap: 25px; flex-wrap: wrap; }
+.footer-navigation a { font-size: 13px; text-decoration: none; }
+.footer-navigation a:hover { color: white; }
+.footer-copyright { font-size: 12px; padding-top: 30px; margin-top: 65px; border-top: 1px solid #ffffff1f; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; background: #10334a; color: white; padding: 1rem; z-index: 30; }
+.skip-link:focus { top: 1rem; }
+@media (max-width: 1200px) { .navigation { gap: 17px; } .header-inner { gap: 18px; } .footer-navigation { gap: 18px; } }
+@media (max-width: 1050px) { .navigation { gap: 12px; } .navigation > a { font-size: 12px; } .brand { gap: 9px; } .header-contact { padding-inline: 18px; } }
+@media (max-width: 960px) {
+  .header-inner { min-height: 76px; }
+  .header-contact { margin-left: auto; }
+  .menu-toggle { display: flex; order: 3; border: none; padding: 8px; background: transparent; color: #10334a; cursor: pointer; }
+  .navigation { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 20; background: #fafcf8; padding: 20px 5%; border-bottom: 1px solid #dce7ec; box-shadow: 0 12px 20px #10334a0d; }
+  .navigation.is-open { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .navigation > a { padding: 13px 8px; font-size: 16px; }
+  .navigation > a.active::after { left: 8px; right: auto; width: 28px; bottom: 5px; }
+  .navigation .mobile-contact { display: inline-flex; align-self: flex-start; color: white; margin-top: 16px; padding-inline: 24px; }
+  .footer-top { align-items: flex-start; flex-direction: column; gap: 32px; }
+  .footer-navigation { justify-content: flex-start; gap: 18px 24px; }
+}
+@media (max-width: 600px) { .site-footer { padding-top: 48px; } .footer-copyright { margin-top: 40px; } .brand { font-size: 18px; } .brand-mark { width: 30px; height: 30px; font-size: 21px; } .header-contact { font-size: 12px; padding: 10px 16px; } }
+@media (max-width: 380px) { .header-inner .header-contact { display: none; } .menu-toggle { margin-left: auto; } }
