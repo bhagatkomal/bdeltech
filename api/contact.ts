@@ -4,7 +4,7 @@ type VercelRequest = { method?: string; body?: unknown }
 type VercelResponse = { status: (code: number) => VercelResponse; json: (body: Record<string, string>) => void }
 
 const recipient = process.env.CONTACT_EMAIL ?? 'komal.bhagat@bdeltech.com'
-const sender = process.env.RESEND_FROM_EMAIL ?? 'YourTech website <contact@bdeltech.com>'
+const sender = process.env.RESEND_FROM_EMAIL ?? 'Bdeltech website <contact@bdeltech.com>'
 
 type ContactPayload = {
   name?: unknown
@@ -23,7 +23,9 @@ export default async function handler(request: VercelRequest, response: VercelRe
   if (request.method !== 'POST') return send({ error: 'Method not allowed.' }, 405)
 
   const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) return send({ error: 'Email service is not configured.' }, 503)
+  if (!apiKey) {
+    return send({ error: 'Email service is not configured. Add RESEND_API_KEY in Vercel Project Settings → Environment Variables, then redeploy.' }, 503)
+  }
 
   let payload: ContactPayload | undefined
   try {
@@ -48,7 +50,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
     from: sender,
     to: [recipient],
     replyTo: email,
-    subject: `YourTech enquiry: ${service}`,
+    subject: `Bdeltech enquiry: ${service}`,
     text: [
       `Name: ${name}`,
       `Work email: ${email}`,
