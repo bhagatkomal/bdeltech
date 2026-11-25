@@ -9,14 +9,15 @@ import Icon from '../components/ui/Icon'
 import usePageTitle from '../hooks/usePageTitle'
 import '../styles/contact.css'
 
-const contactEmail = 'hello@yourtech.com'
+const contactEmail = 'komal.bhagat@bdeltech.com'
 const services = ['Software development', 'AI & automation', 'Cloud modernisation', 'Digital transformation']
 
 export default function ContactPage() {
   usePageTitle('Contact')
-  const [emailDraft, setEmailDraft] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [statusMessage, setStatusMessage] = useState('')
 
-  function prepareMessage(event: FormEvent<HTMLFormElement>) {
+  async function prepareMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const form = event.currentTarget
     const fields = new FormData(form)
@@ -28,10 +29,29 @@ export default function ContactPage() {
     messageInput.setCustomValidity(message ? '' : 'Please tell us about your goals.')
     if (!form.reportValidity()) return
     const service = String(fields.get('service'))
-    const body = `${message}\n\nName: ${name}\nWork email: ${fields.get('email')}\nCompany: ${String(fields.get('company') ?? '').trim()}\nService: ${service}`
-    const draft = `mailto:${contactEmail}?subject=${encodeURIComponent(`bdeltech enquiry: ${service}`)}&body=${encodeURIComponent(body)}`
-    setEmailDraft(draft)
-    window.location.href = draft
+    setStatus('sending')
+    setStatusMessage('Sending your message…')
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email: String(fields.get('email') ?? '').trim(),
+          company: String(fields.get('company') ?? '').trim(),
+          service,
+          message,
+        }),
+      })
+      const result = await response.json() as { message?: string; error?: string }
+      if (!response.ok) throw new Error(result.error ?? 'Unable to send your message.')
+      setStatus('success')
+      setStatusMessage(result.message ?? 'Thanks — your message has been sent.')
+      form.reset()
+    } catch (error) {
+      setStatus('error')
+      setStatusMessage(error instanceof Error ? error.message : 'Unable to send your message right now.')
+    }
   }
 
   return (
@@ -46,7 +66,7 @@ export default function ContactPage() {
           <img className="contact-hero-photo" src={office} alt="A team collaborating in a bright meeting room with large windows" fetchPriority="high" />
         </section>
         <div className="contact-content">
-          <form className="contact-form" onSubmit={prepareMessage} aria-label="Contact bdeltech" aria-describedby="contact-form-status" onChange={() => setEmailDraft('')}>
+          <form className="contact-form" onSubmit={prepareMessage} aria-label="Contact bdeltech" aria-describedby="contact-form-status" onChange={() => { if (status !== 'sending') { setStatus('idle'); setStatusMessage('') } }}>
             <div className="contact-form-fields">
               <label htmlFor="contact-name">Name <span aria-hidden="true">*</span>
                 <input id="contact-name" name="name" placeholder="Your name" autoComplete="name" maxLength={120} required onChange={event => event.currentTarget.setCustomValidity('')} />
@@ -64,8 +84,8 @@ export default function ContactPage() {
                 <textarea id="contact-message" name="message" placeholder="Tell us about your goals" rows={6} maxLength={5000} required onChange={event => event.currentTarget.setCustomValidity('')} />
               </label>
             </div>
-            <button className="button contact-send" type="submit">Send message <Icon name="arrow" /></button>
-            <p id="contact-form-status" className="contact-form-status" role="status">{emailDraft && <>Finish sending your message in your email app. If it didn’t open, <a href={emailDraft}>open your email draft</a>.</>}</p>
+            <button className="button contact-send" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send message'} {status !== 'sending' && <Icon name="arrow" />}</button>
+            <p id="contact-form-status" className={`contact-form-status contact-form-status-${status}`} role="status">{statusMessage}</p>
           </form>
           <aside className="contact-details" aria-label="Contact details">
             <dl className="contact-details-list">

@@ -17,6 +17,16 @@ npm run build
 npm run lint
 ```
 
+## Contact email
+
+The contact form posts to `api/contact.ts`, a Vercel serverless function that sends through Resend. Add these environment variables in Vercel Project Settings for Preview and Production:
+
+- `RESEND_API_KEY`: your Resend API key
+- `RESEND_FROM_EMAIL`: a sender address from a domain verified in Resend
+- `CONTACT_EMAIL`: the inbox that receives contact submissions (defaults to `komal.bhagat@bdeltech.com`)
+
+Copy `.env.example` to `.env.local` for local development. Keep the Resend API key server-side and never add it to `VITE_` variables.
+
 ## Structure
 
 - `src/assets`: images and other imported assets
