@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link className="brand" to="/" onClick={closeMenu}><span className="brand-mark" aria-hidden="true">b</span>bdeltech</Link>
+        <Link className="brand" to="/" onClick={closeMenu} aria-label="bdeltech home"><img className="brand-logo" src="/logo-primary.svg" alt="bdeltech" width="188" height="45" /></Link>
         <button className="menu-toggle" type="button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(!menuOpen)}><Icon name={menuOpen ? 'close' : 'menu'} /></button>
         <nav id="main-navigation" className={menuOpen ? 'navigation is-open' : 'navigation'} aria-label="Main navigation">
           {navigation.map(({ label, to }) => to.includes('#') ? (

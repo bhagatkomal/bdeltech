@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-company">
-            <Link className="footer-brand" to="/">bdeltech</Link>
+            <Link className="footer-brand" to="/" aria-label="bdeltech home"><img className="footer-logo" src="/logo-reversed.svg" alt="bdeltech" width="204" height="50" loading="lazy" /></Link>
             <p>Technology, engineering and delivery for ambitious businesses.</p>
           </div>
           <nav className="footer-navigation" aria-label="Footer navigation">
